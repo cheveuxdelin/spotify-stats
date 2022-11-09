@@ -118,8 +118,6 @@ export default function Home(
 }
 
 /*
-
-
 async function checkIfUserLastVisitWasFourWeeksAgo(): Promise<boolean> {
     const response = await fetch(
         "https://ti3r7srzn2njbfuw2cpnshwwuu0zjmuo.lambda-url.us-east-1.on.aws/",
