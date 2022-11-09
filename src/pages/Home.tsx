@@ -5,6 +5,7 @@ import { data, term, trackFeatures } from "../types";
 import Averages from "../components/Averages";
 import TopArtists from "../components/TopArtists";
 import TopTracks from "../components/TopTracks";
+import Header from "../components/Header";
 
 export default function Home(
     { token, logoutHandler }: { token: string; logoutHandler: () => void },
@@ -106,29 +107,13 @@ export default function Home(
 
     return (
         <div className="h-screen">
-            <nav
-                className="py-4 px-6 bg-slate-900 flex justify-between items-center border-b border-b-slate-500 h-[80px]">
-                <p className="text-lg subpixel-antialiased font-semibold">
-                    Stats Spotify
-                </p>
-                <div className="flex items-center space-x-2">
-                    <img src={userData?.img} className="rounded-full w-14" />
-                    <p className="text-white">{userData?.name}</p>
-                    <button
-                        onClick={logoutHandler}
-                        className="bg-slate-700 rounded-md px-3 py-1 borde"
-                    >
-                        logout
-                    </button>
-                </div>
-            </nav>
-
+            <Header logoutHandler={logoutHandler} userData={userData!} />
             <div className="grid grid-rows-2 grid-cols-2 h-[calc(100vh-80px)] p-5">
                 {userTracks && <TopTracks tracks={userTracks} setTrackSearchTerm={setTrackSearchTerm} />}
                 {userArtits && <TopArtists artists={userArtits} setArtistSearchTerm={setArtistSearchTerm} />}
                 {avergeTrackFeatues && <Averages features={avergeTrackFeatues} />}
             </div>
-        </div>
+        </div >
     );
 }
 
