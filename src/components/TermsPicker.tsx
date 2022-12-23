@@ -20,6 +20,7 @@ export default function TermsPicker({ setSearchTerm }: { setSearchTerm: (t: term
         <h2 className="text-4xl text-center">Tracks</h2>
         {terms.map((t) => (
             <button
+                key={t.term}
                 onClick={() => setSearchTerm(t.term)}
                 className="w-[120px] border-r last:border-r-0 text-center  first:text-right last:text-start px-3"
             >

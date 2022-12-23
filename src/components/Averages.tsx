@@ -8,7 +8,7 @@ export default function Averages({ features }: { features: trackFeatures }) {
     >
         <h2 className="text-4xl text-center">Averages</h2>
         <div className="flex flex-wrap justify-center h-full content-center">
-            {trackFeaturesArray.map(feature => <div className="m-5 h-min text-center">
+            {trackFeaturesArray.map(feature => <div className="m-5 h-min text-center" key={feature}>
                 <p className="text-2xl">{feature}</p>
                 <p className="text-green-300">{features[feature as keyof trackFeatures]}</p>
             </div>
